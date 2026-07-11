@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GRS-SIMA | Data Anggota</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+body{
+
+margin:0;
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:#eef3f8;
+
+}
+
+.header{
+
+background:#0B3C74;
+
+color:white;
+
+padding:18px;
+
+text-align:center;
+
+font-size:24px;
+
+font-weight:bold;
+
+}
+
+.container{
+
+width:95%;
+
+max-width:1200px;
+
+margin:30px auto;
+
+background:white;
+
+padding:20px;
+
+border-radius:10px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.top{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+input{
+
+padding:10px;
+
+width:300px;
+
+border:1px solid #ccc;
+
+border-radius:6px;
+
+}
+
+a{
+
+text-decoration:none;
+
+background:#0B6EFD;
+
+color:white;
+
+padding:10px 15px;
+
+border-radius:6px;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+th{
+
+background:#0B3C74;
+
+color:white;
+
+padding:12px;
+
+}
+
+td{
+
+padding:10px;
+
+border:1px solid #ddd;
+
+text-align:center;
+
+}
+
+img{
+
+width:60px;
+
+height:75px;
+
+object-fit:cover;
+
+border-radius:5px;
+
+}
+
+button{
+
+padding:7px 12px;
+
+border:none;
+
+border-radius:5px;
+
+cursor:pointer;
+
+margin:2px;
+
+}
+
+.edit{
+
+background:#ffc107;
+
+}
+
+.hapus{
+
+background:#dc3545;
+
+color:white;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+DATA ANGGOTA GRS-SIMA
+
+</div>
+
+<div class="container">
+
+<div class="top">
+
+<input
+type="text"
+id="cari"
+placeholder="Cari Nama Anggota..."
+onkeyup="tampilkanAnggota()">
+
+<a href="anggota.html">
+
++ Tambah Anggota
+
+</a>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>No Reg</th>
+
+<th>Foto</th>
+
+<th>Nama</th>
+
+<th>NIK</th>
+
+<th>Jabatan</th>
+
+<th>Alamat</th>
+
+<th>No HP</th>
+
+<th>Aksi</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabelAnggota">
+
+<tr>
+
+<td colspan="7">
+
+    Memuat data anggota
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>
