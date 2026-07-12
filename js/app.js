@@ -112,7 +112,7 @@ class StorageManager {
 
     }
 
-/* =====================================================
+}/* =====================================================
    GRS-SIMA
    Tambah Anggota
 ===================================================== */
@@ -181,9 +181,7 @@ addDoc(collection(db, "members"), anggota)
 
 window.location.href = "data-anggota.html";
 
-}
-
-/* ===========================================
+}/* ===========================================
    Tampilkan Data Anggota
 =========================================== */
 
@@ -407,6 +405,35 @@ document.addEventListener(
    CETAK KTA
 =========================================== */
 
+function tampilkanKTA(){
+
+    const area = document.getElementById("kartuArea");
+
+    if(!area) return;
+
+    const id = localStorage.getItem("cetakKTA");
+
+    if(!id){
+
+        area.innerHTML = "<h3>Data anggota tidak ditemukan</h3>";
+
+        return;
+
+    }
+
+    const anggota = StorageManager.getById(id);
+
+    if(!anggota){
+
+        area.innerHTML = "<h3>Data anggota tidak ditemukan</h3>";
+
+        return;
+
+    }
+
+   
+}
+
 function cetakKTA(id) {
     localStorage.setItem("cetakKTA", id);
     window.location.href = "kta.html";
@@ -467,6 +494,7 @@ new QRCode(qr,{
 qr.querySelector("img")?.setAttribute("draggable","false");
 
 }
+document.addEventListener("DOMContentLoaded", tampilkanKTA);
 
 /* ===========================================
    DETAIL ANGGOTA
