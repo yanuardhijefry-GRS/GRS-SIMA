@@ -117,7 +117,7 @@ class StorageManager {
    Tambah Anggota
 ===================================================== */
 
-function simpanData()
+function simpanData(){
 
     console.log("SIMPAN DATA BERJALAN");
 
