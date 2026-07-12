@@ -405,34 +405,7 @@ document.addEventListener(
    CETAK KTA
 =========================================== */
 
-function tampilkanKTA(){
 
-    const area = document.getElementById("kartuArea");
-
-    if(!area) return;
-
-    const id = localStorage.getItem("cetakKTA");
-
-    if(!id){
-
-        area.innerHTML = "<h3>Data anggota tidak ditemukan</h3>";
-
-        return;
-
-    }
-
-    const anggota = StorageManager.getById(id);
-
-    if(!anggota){
-
-        area.innerHTML = "<h3>Data anggota tidak ditemukan</h3>";
-
-        return;
-
-    }
-
-   
-}
 
 function cetakKTA(id) {
     localStorage.setItem("cetakKTA", id);
