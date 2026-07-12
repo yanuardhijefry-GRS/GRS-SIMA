@@ -3,6 +3,12 @@
    Storage Manager
 ===================================================== */
 
+import { db } from "./firebase.js";
+
+import {
+    collection,
+    addDoc
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 const STORAGE_KEY = "grs_sima_anggota";
 
 class StorageManager {
@@ -111,7 +117,11 @@ class StorageManager {
    Tambah Anggota
 ===================================================== */
 
-function simpanData(){
+function simpanData()
+
+    console.log("SIMPAN DATA BERJALAN");
+
+
 
     let anggota = {
 
@@ -156,6 +166,14 @@ if(editId){
 }else{
 
     StorageManager.add(anggota);
+    
+addDoc(collection(db, "members"), anggota)
+.then(() => {
+    console.log("Data berhasil dikirim ke Firebase");
+})
+.catch((error) => {
+    console.error("Firebase Error:", error);
+});
 
     alert("Data berhasil disimpan.");
 
@@ -234,7 +252,7 @@ window.location.href = "data-anggota.html";
 
 <button onclick="cetakKTA('${a.id}')">
 
-🪪 KTA
+ KTA
 
 </button>
 
