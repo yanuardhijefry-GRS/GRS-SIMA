@@ -181,6 +181,8 @@ addDoc(collection(db, "members"), anggota)
 
 window.location.href = "data-anggota.html";
 
+}
+
 }/* ===========================================
    Tampilkan Data Anggota
 =========================================== */
