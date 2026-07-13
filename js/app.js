@@ -466,7 +466,9 @@ function tampilkanKTA(){
     const qr = document.getElementById("qrcode");
 
 new QRCode(qr,{
-    text: "detail.html?id=" + anggota.id,
+    text: "https://yanuardhijefry-grs.github.io/GRS-SIMA/detail.html?id=" + anggota.id,
+    width: 120,
+    height: 120
 });
 
 qr.querySelector("img")?.setAttribute("draggable","false");
