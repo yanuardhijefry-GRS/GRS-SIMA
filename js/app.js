@@ -7,7 +7,12 @@ import { db } from "./firebase.js";
 
 import {
     collection,
-    addDoc
+    addDoc,
+    getDocs,
+    getDoc,
+    updateDoc,
+    deleteDoc,
+    doc
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 const STORAGE_KEY = "grs_sima_anggota";
 
