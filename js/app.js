@@ -526,3 +526,9 @@ function tampilkanDetailAnggota(){
 }
 
 document.addEventListener("DOMContentLoaded", tampilkanDetailAnggota);
+
+window.simpanData = simpanData;
+window.previewFoto = previewFoto;
+window.editAnggota = editAnggota;
+window.hapusAnggota = hapusAnggota;
+window.cetakKTA = cetakKTA;
