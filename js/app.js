@@ -484,55 +484,73 @@ document.addEventListener("DOMContentLoaded", tampilkanKTA);
    DETAIL ANGGOTA
 =========================================== */
 
-function tampilkanDetailAnggota(){
+async function tampilkanDetailAnggota() {
 
     const area = document.getElementById("detailArea");
 
-    if(!area) return;
+    if (!area) return;
 
     const params = new URLSearchParams(window.location.search);
-
     const id = params.get("id");
 
-    if(!id){
-
+    if (!id) {
         area.innerHTML = "<h3>Data tidak ditemukan</h3>";
-
         return;
-
     }
 
-    const anggota = StorageManager.getById(id);
+    try {
 
-    if(!anggota){
+        const snapshot = await getDocs(collection(db, "members"));
 
-        area.innerHTML = "<h3>Anggota tidak ditemukan</h3>";
+        let anggota = null;
 
-        return;
+        snapshot.forEach((docSnap) => {
+
+            const data = docSnap.data();
+
+            if (
+                data.nomor === id ||
+                docSnap.id === id
+            ) {
+                anggota = data;
+            }
+
+        });
+
+        if (!anggota) {
+            area.innerHTML = "<h3>Anggota tidak ditemukan</h3>";
+            return;
+        }
+
+        area.innerHTML = `
+            <img src="${anggota.foto}" width="180"><br><br>
+
+            <b>Nomor Register</b><br>
+            ${anggota.nomor}<br><br>
+
+            <b>Nama</b><br>
+            ${anggota.nama}<br><br>
+
+            <b>NIK</b><br>
+            ${anggota.nik}<br><br>
+
+            <b>Jabatan</b><br>
+            ${anggota.jabatan}<br><br>
+
+            <b>No HP</b><br>
+            ${anggota.hp}<br><br>
+
+            <b>Alamat</b><br>
+            ${anggota.alamat}
+        `;
+
+    } catch (error) {
+
+        console.error(error);
+
+        area.innerHTML = "<h3>Gagal mengambil data anggota</h3>";
 
     }
-
-    area.innerHTML = `
-        <img src="${anggota.foto}" width="180"><br><br>
-
-        <b>Nomor Register</b><br>
-        ${anggota.nomor}<br><br>
-
-        <b>Nama</b><br>
-        ${anggota.nama}<br><br>
-
-        <b>NIK</b><br>
-        ${anggota.nik}<br><br>
-
-        <b>Jabatan</b><br>
-        ${anggota.jabatan}<br><br>
-
-        <b>No HP</b><br>
-        ${anggota.hp}<br><br>
-
-        <b>Alamat</b><br>
-        ${anggota.alamat}
-    `;
 
 }
 
