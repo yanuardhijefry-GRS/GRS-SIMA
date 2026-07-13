@@ -124,7 +124,7 @@ static getById(id) {
    Tambah Anggota
 ===================================================== */
 
-async function simpanData(){
+function simpanData(){
 
     console.log("SIMPAN DATA BERJALAN");
 
