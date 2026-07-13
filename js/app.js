@@ -104,12 +104,14 @@ class StorageManager {
         this.saveData(data);
     }
 
-    static getById(id) {
+static getById(id) {
 
-        return this.getData()
-            .find(item => item.id === id);
+    return this.getData().find(item =>
+        item.id === id ||
+        item.nomor === id
+    );
 
-    }
+}
 
     static count() {
 
@@ -466,7 +468,7 @@ function tampilkanKTA(){
     const qr = document.getElementById("qrcode");
 
 new QRCode(qr,{
-    text: "https://yanuardhijefry-grs.github.io/GRS-SIMA/detail.html?id=" + anggota.id,
+    text: "https://yanuardhijefry-grs.github.io/GRS-SIMA/detail.html?id=" + anggota.nomor,
     width: 120,
     height: 120
 });
