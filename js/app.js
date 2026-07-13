@@ -124,7 +124,7 @@ static getById(id) {
    Tambah Anggota
 ===================================================== */
 
-async function simpanData(){
+function simpanData(){
 
     console.log("SIMPAN DATA BERJALAN");
 
@@ -171,21 +171,18 @@ if(editId){
     alert("Data berhasil diperbarui.");
 
 }else{
-StorageManager.add(anggota);
+   
+    StorageManager.add(anggota);
 
-try {
-
-    await addDoc(collection(db, "members"), anggota);
+    addDoc(collection(db,"members"), anggota)
+    .then(()=>{
+        console.log("Backup Firebase berhasil");
+    })
+    .catch((error)=>{
+        console.error(error);
+    });
 
     alert("Data berhasil disimpan.");
-
-    window.location.href = "data-anggota.html";
-
-} catch (error) {
-
-    console.error(error);
-
-    alert("Gagal menyimpan ke Firebase");
 
 }
 window.location.href = "data-anggota.html";
