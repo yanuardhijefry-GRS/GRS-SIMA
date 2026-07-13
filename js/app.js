@@ -471,6 +471,8 @@ new QRCode(qr,{
     height: 120
 });
 
+   console.log("QR LINK :", linkQR);
+
 qr.querySelector("img")?.setAttribute("draggable","false");
 
 }
