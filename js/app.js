@@ -560,3 +560,38 @@ window.previewFoto = previewFoto;
 window.editAnggota = editAnggota;
 window.hapusAnggota = hapusAnggota;
 window.cetakKTA = cetakKTA;
+
+async function sinkronkanFirestore(){
+
+    const data = StorageManager.getData();
+
+    if(data.length === 0){
+        alert("Tidak ada data anggota.");
+        return;
+    }
+
+    let berhasil = 0;
+
+    for(const anggota of data){
+
+        try{
+
+            await addDoc(collection(db,"members"), anggota);
+
+            berhasil++;
+
+        }catch(e){
+
+            console.error(e);
+
+        }
+
+    }
+
+    alert(
+        berhasil +
+        " anggota berhasil dikirim ke Firestore."
+    );
+
+}
+window.sinkronkanFirestore = sinkronkanFirestore;
