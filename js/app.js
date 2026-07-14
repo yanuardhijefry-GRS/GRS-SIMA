@@ -13,6 +13,8 @@ import {
     updateDoc,
     deleteDoc,
     doc
+   query,
+   where
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 const STORAGE_KEY = "grs_sima_anggota";
 
@@ -565,33 +567,35 @@ async function sinkronkanFirestore(){
 
     const data = StorageManager.getData();
 
-    if(data.length === 0){
-        alert("Tidak ada data anggota.");
-        return;
-    }
-
     let berhasil = 0;
 
     for(const anggota of data){
 
-        try{
+        const q = query(
+            collection(db,"members"),
+            where("nomor","==",anggota.nomor)
+        );
 
-            await addDoc(collection(db,"members"), anggota);
+        const snap = await getDocs(q);
 
-            berhasil++;
-
-        }catch(e){
-
-            console.error(e);
-
+        if(!snap.empty){
+            continue;
         }
+
+        await addDoc(
+            collection(db,"members"),
+            anggota
+        );
+
+        berhasil++;
 
     }
 
     alert(
         berhasil +
-        " anggota berhasil dikirim ke Firestore."
+        " anggota berhasil disinkronkan."
     );
 
 }
+
 window.sinkronkanFirestore = sinkronkanFirestore;
