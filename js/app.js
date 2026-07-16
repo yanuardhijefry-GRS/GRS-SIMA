@@ -173,12 +173,13 @@ if(editId){
     alert("Data berhasil diperbarui.");
 
 }else{
-   
+   console.log("Storage:", anggota);
     StorageManager.add(anggota);
-
+   
+console.log("Kirim ke Firestore");
     addDoc(collection(db,"members"), anggota)
-    .then(()=>{
-        console.log("Backup Firebase berhasil");
+    .then((docRef)=>{
+        console.log("Firestore BERHASIL:",docRef.id);
     })
     .catch((error)=>{
         console.error("Firebase Error:", error);
