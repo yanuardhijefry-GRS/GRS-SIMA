@@ -311,24 +311,34 @@ function previewFoto(e){
 
 }
 
-function hapusAnggota(id){
+async function hapusAnggota(id){
 
     if(!confirm("Yakin ingin menghapus anggota ini?")){
         return;
     }
 
+    // Cari data anggota di LocalStorage
+    const anggota = StorageManager.getById(id);
+
+    // Hapus dari LocalStorage
     StorageManager.delete(id);
 
+    // Hapus dari Firestore
+    if(anggota){
+
+        const q = query(
+            collection(db,"members"),
+            where("nomor","==",anggota.nomor)
+        );
+
+        const snap = await getDocs(q);
+
+        for(const d of snap.docs){
+            await deleteDoc(doc(db,"members",d.id));
+        }
+    }
+
     tampilkanAnggota();
-
-}
-
-function editAnggota(id){
-
-    localStorage.setItem("editAnggota", id);
-
-    window.location.href = "anggota.html";
-
 }
 
 function bukaKTA(id){
