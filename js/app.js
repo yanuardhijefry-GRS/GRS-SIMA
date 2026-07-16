@@ -181,7 +181,8 @@ if(editId){
         console.log("Backup Firebase berhasil");
     })
     .catch((error)=>{
-        console.error(error);
+        console.error("Firebase Error:", error);
+       alert(error.message);
     });
 
     alert("Data berhasil disimpan.");
