@@ -195,7 +195,7 @@ window.location.href = "data-anggota.html";
    Tampilkan Data Anggota
 =========================================== */
 
- function tampilkanAnggota(){
+async function tampilkanAnggota(){
 
     const tabel = document.getElementById("tabelAnggota");
     const cari = document.getElementById("cari");
@@ -204,7 +204,13 @@ window.location.href = "data-anggota.html";
 
     const keyword = cari ? cari.value.toLowerCase() : "";
 
-    const data = StorageManager.getData();
+    const snapshot = await getDocs(collection(db,"members"));
+
+    const data = [];
+
+    snapshot.forEach((docSnap)=>{
+        data.push(docSnap.data());
+    });
 
     tabel.innerHTML = "";
 
@@ -212,7 +218,7 @@ window.location.href = "data-anggota.html";
 
         tabel.innerHTML = `
         <tr>
-            <td colspan="7">Belum ada data anggota</td>
+            <td colspan="8">Belum ada data anggota</td>
         </tr>
         `;
 
@@ -248,29 +254,22 @@ window.location.href = "data-anggota.html";
 
                 <td>
 
-<button onclick="editAnggota('${a.id}')">
+                    <button onclick="editAnggota('${a.id}')">
+                        ✏️ Edit
+                    </button>
 
-✏️ Edit
+                    <button onclick="hapusAnggota('${a.id}')">
+                        🗑️ Hapus
+                    </button>
 
-</button>
+                    <button onclick="cetakKTA('${a.id}')">
+                        KTA
+                    </button>
 
-<button onclick="hapusAnggota('${a.id}')">
-
-🗑️ Hapus
-
-</button>
-
-<button onclick="cetakKTA('${a.id}')">
-
- KTA
-
-</button>
-
-</td>
+                </td>
 
             </tr>
             `;
-
         }
 
     });
@@ -279,10 +278,9 @@ window.location.href = "data-anggota.html";
 
         tabel.innerHTML = `
         <tr>
-            <td colspan="7">Data tidak ditemukan</td>
+            <td colspan="8">Data tidak ditemukan</td>
         </tr>
         `;
-
     }
 
 }
