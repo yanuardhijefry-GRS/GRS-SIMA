@@ -1,147 +1,117 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+
 }
 
 body{
-    background:#f4f6f9;
-    color:#333;
+
+background:#0d6e3d;
+
 }
 
-.header{
-    background:#0B3C74;
-    color:white;
-    padding:18px;
-    text-align:center;
-    font-size:24px;
-    font-weight:bold;
+.login-page{
+
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+
 }
 
-.container{
-    width:95%;
-    max-width:1100px;
-    margin:25px auto;
-    background:#fff;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
+.login-box{
+
+width:350px;
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
 }
 
-input,
-select,
-textarea{
-    width:100%;
-    padding:10px;
-    margin:8px 0;
-    border:1px solid #ccc;
-    border-radius:5px;
+.logo{
+
+width:110px;
+
+margin-bottom:15px;
+
+}
+
+h1{
+
+color:#0d6e3d;
+
+margin-bottom:5px;
+
+}
+
+p{
+
+color:#555;
+
+margin-bottom:15px;
+
+}
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin-bottom:15px;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+font-size:15px;
+
 }
 
 button{
-    padding:10px 18px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    background:#0B6EFD;
-    color:white;
+
+width:100%;
+
+padding:12px;
+
+background:#0d6e3d;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.3s;
+
 }
 
 button:hover{
-    background:#084298;
+
+background:#0b5d34;
+
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
-}
+#error{
 
-th{
-    background:#0B3C74;
-    color:white;
-    padding:10px;
-}
+color:red;
 
-td{
-    border:1px solid #ddd;
-    padding:10px;
-}
+font-size:14px;
 
-.menu{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
+margin-top:10px;
 
-.card{
-    background:white;
-    border-radius:10px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
-    cursor:pointer;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    background:#0B3C74;
-    color:white;
-}
-
-a{
-    text-decoration:none;
-}
-/* ==========================
-   TEMPLATE KTA
-========================== */
-
-.kta-depan{
-    position: relative;
-    width: 340px;
-    margin: 20px auto;
-}
-
-.bg-kta{
-    width: 340px;
-    display: block;
-    border-radius: 12px;
-}
-
-.foto-kta{
-    position:absolute;
-    top:165px;
-    left:75px;
-    width:200px;
-    height:240px;
-    object-fit:cover;
-}
-
-.nama-kta{
-    position:absolute;
-    top:430px;
-    left:0;
-    width:100%;
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
-}
-
-.nomor-kta{
-    position:absolute;
-    top:468px;
-    left:0;
-    width:100%;
-    text-align:center;
-    font-size:18px;
-}
-
-.qr-kta{
-    position:absolute;
-    top:500px;
-    left:130px;
-    width:90px;
-    height:90px;
 }
