@@ -34,7 +34,12 @@ tabel.innerHTML+=`
 <td>${a.hp}</td>
 
 <td>
+<button class="btn"
+onclick="lihatDetail(${index})">
 
+Detail
+
+</button>
 <button class="btn edit"
 onclick="editData(${index})">
 
@@ -128,5 +133,12 @@ function buatQR(i){
 localStorage.setItem("qrIndex",i);
 
 location="kta.html";
+
+}
+function lihatDetail(i){
+
+localStorage.setItem("detailIndex",i);
+
+location="detail.html";
 
 }
