@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
-<title>Data Anggota</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Detail Anggota</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="content">
 
-    <h2>DATA ANGGOTA</h2>
+<div class="detail-card">
 
-    <div id="detailArea"></div>
+<img id="foto">
+
+<h2 id="nama"></h2>
+
+<p><b>ID :</b> <span id="id"></span></p>
+
+<p><b>Jabatan :</b> <span id="jabatan"></span></p>
+
+<p><b>Alamat :</b> <span id="alamat"></span></p>
+
+<p><b>No HP :</b> <span id="hp"></span></p>
+
+<p><b>Tanggal Terdaftar :</b> <span id="tanggal"></span></p>
+
+<br>
+
+<button onclick="history.back()">
+
+Kembali
+
+</button>
 
 </div>
 
-<script type="module" src="js/app.js"></script>
+</div>
+
+<script src="js/detail.js"></script>
 
 </body>
 </html>
