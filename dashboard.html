@@ -44,6 +44,41 @@
 
 <h2 id="totalAnggota">0</h2>
 
+  <div class="card">
+
+<h3>Backup Data</h3>
+
+<button onclick="exportData()">
+
+Export JSON
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Restore Data</h3>
+
+<input
+type="file"
+id="importFile"
+accept=".json">
+
+</div>
+
+<div class="card">
+
+<h3>Reset Data</h3>
+
+<button onclick="resetData()">
+
+Hapus Semua
+
+</button>
+
+</div>
+
 </div>
 
 <div class="card">
@@ -103,6 +138,6 @@ window.location="index.html";
 }
 
 </script>
-
+<script src="js/export.js"></script>
 </body>
 </html>
