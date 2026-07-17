@@ -1,205 +1,60 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GRS-SIMA | Tambah Anggota</title>
+<title>Tambah Anggota - GRS SIMA</title>
 
 <link rel="stylesheet" href="css/style.css">
-
-<style>
-
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#eef3f8;
-}
-
-.header{
-background:#0B3C74;
-color:white;
-padding:18px;
-text-align:center;
-font-size:24px;
-font-weight:bold;
-}
-
-.container{
-width:900px;
-max-width:95%;
-margin:30px auto;
-background:white;
-border-radius:10px;
-padding:25px;
-box-shadow:0 5px 20px rgba(0,0,0,.2);
-}
-
-.row{
-display:flex;
-gap:15px;
-margin-bottom:15px;
-}
-
-.col{
-flex:1;
-}
-
-label{
-display:block;
-margin-bottom:5px;
-font-weight:bold;
-color:#333;
-}
-
-input,
-select,
-textarea{
-
-width:100%;
-padding:10px;
-border:1px solid #ccc;
-border-radius:6px;
-box-sizing:border-box;
-font-size:15px;
-
-}
-
-textarea{
-
-resize:none;
-height:80px;
-
-}
-
-.preview{
-
-width:150px;
-height:190px;
-border:2px dashed #ccc;
-display:flex;
-align-items:center;
-justify-content:center;
-overflow:hidden;
-margin:auto;
-border-radius:8px;
-
-}
-
-.preview img{
-
-width:100%;
-height:100%;
-object-fit:cover;
-
-}
-
-.button-area{
-
-display:flex;
-gap:15px;
-margin-top:25px;
-
-}
-
-button{
-
-flex:1;
-padding:14px;
-font-size:16px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-
-}
-
-.btn-save{
-
-background:#0B6EFD;
-color:white;
-
-}
-
-.btn-back{
-
-background:#6c757d;
-color:white;
-
-}
-
-</style>
-
 </head>
 
 <body>
 
-<div class="header">
+<div class="sidebar">
 
-GRS-SIMA
-<br>
-Tambah Data Anggota
+<div class="brand">
+<h2>GRS-SIMA</h2>
+<p>Gading Rescue Squad</p>
+</div>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="anggota.html">Tambah Anggota</a>
+<a href="data-anggota.html">Data Anggota</a>
 
 </div>
 
-<div class="container">
+<div class="content">
 
-<div class="row">
+<h1>Tambah Anggota</h1>
 
-<div class="col">
+<form id="formAnggota">
 
-<label>Nomor Register Anggota</label>
+<label>Nomor Anggota</label>
 
 <input
 type="text"
-id="nomor">
-
-</div>
-
-<div class="col">
+id="id"
+readonly>
 
 <label>Nama Lengkap</label>
 
 <input
 type="text"
-id="nama">
-
-</div>
-
-</div>
-
-<div class="row">
-
-<div class="col">
-
-<label>NIK</label>
-
-<input
-type="text"
-id="nik">
-
-</div>
-
-<div class="col">
+id="nama"
+required>
 
 <label>Jabatan</label>
 
-<select id="jabatan">
+<input
+type="text"
+id="jabatan"
+required>
 
-<option>Ketua</option>
-<option>Wakil Ketua</option>
-<option>Sekretaris</option>
-<option>Bendahara</option>
-<option>Koordinator</option>
-<option>Anggota</option>
+<label>Alamat</label>
 
-</select>
-
-</div>
-
-</div><div class="row">
-
-<div class="col">
+<textarea
+id="alamat"
+required></textarea>
 
 <label>No HP</label>
 
@@ -207,84 +62,28 @@ id="nik">
 type="text"
 id="hp">
 
-</div>
-
-<div class="col">
-
-<label>Email</label>
-
-<input
-type="email"
-id="email">
-
-</div>
-
-</div>
-
-<div class="row">
-
-<div class="col">
-
-<label>Alamat</label>
-
-<textarea id="alamat"></textarea>
-
-</div>
-
-</div>
-
-<div class="row">
-
-<div class="col">
-
-<label>Foto Anggota</label>
+<label>Upload Foto</label>
 
 <input
 type="file"
 id="foto"
-accept="image/*"
-onchange="previewFoto(event)">
-
-</div>
-
-<div class="col">
-
-<div class="preview">
+accept="image/*">
 
 <img
 id="preview"
-src="img/logo.png">
+class="preview">
 
-</div>
+<button type="submit">
 
-</div>
-
-</div>
-
-<div class="button-area">
-
-<button
-class="btn-save"
-onclick="simpanData()">
-
-💾 Simpan Data
+SIMPAN
 
 </button>
 
-<button
-class="btn-back"
-onclick="window.location.href='dashboard.html'">
-
-⬅ Kembali
-
-</button>
+</form>
 
 </div>
 
-</div>
-
-
-<script type="module" src="js/app.js"></script>
+<script src="js/anggota.js"></script>
 
 </body>
 </html>
