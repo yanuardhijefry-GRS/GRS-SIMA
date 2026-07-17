@@ -1,49 +1,42 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Cetak KTA</title>
+<title>KTA Anggota</title>
 
 <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
 
-<div class="header">
+<div class="content">
 
-KARTU TANDA ANGGOTA
+<div id="kartu">
 
-</div>
+<img id="foto">
 
-<div class="container">
+<h2 id="nama"></h2>
 
-<div id="kartuArea">
+<p id="idanggota"></p>
 
-</div>
+<p id="jabatan"></p>
+
+<div id="qrcode"></div>
 
 <br>
 
-<button class="btn-save" onclick="window.print()">
-
-🖨 Cetak KTA
-
-</button>
-
-<button class="btn-back"
-onclick="window.location.href='data-anggota.html'">
-
-← Kembali
-
+<button onclick="window.print()">
+Cetak KTA
 </button>
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script type="module" src="js/app.js"></script>
+</div>
+
+<script src="libs/qrcode.min.js"></script>
+<script src="js/qr.js"></script>
 
 </body>
-
 </html>
