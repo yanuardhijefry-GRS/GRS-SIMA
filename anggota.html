@@ -25,7 +25,7 @@
 
 <div class="content">
 
-<h1>Tambah Anggota</h1>
+<h1 id="judulForm">Tambah Anggota</h1>
 
 <form id="formAnggota">
 
@@ -84,6 +84,10 @@ SIMPAN
 </div>
 
 <script src="js/anggota.js"></script>
-
+<script>
+if(localStorage.getItem("editIndex")!==null){
+    document.getElementById("judulForm").innerHTML="Edit Anggota";
+}
+</script>
 </body>
 </html>
