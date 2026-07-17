@@ -9,46 +9,17 @@
 
 <link rel="stylesheet" href="css/style.css">
 
-<style>
-
-.login{
-
-width:400px;
-max-width:95%;
-margin:80px auto;
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,.2);
-text-align:center;
-
-}
-
-.logo{
-
-width:130px;
-margin-bottom:20px;
-
-}
-
-.login h2{
-
-margin-bottom:20px;
-color:#0B3C74;
-
-}
-
-</style>
-
 </head>
 
-<body>
+<body class="login-page">
 
-<div class="login">
+<div class="login-box">
 
-<img src="img/logo.PNG" class="logo alt="Logo">
+<img src="assets/logo.png" class="logo">
 
-<h2>GRS-SIMA</h2>
+<h1>GRS-SIMA</h1>
+
+<p>Gading Rescue Squad</p>
 
 <input
 type="text"
@@ -66,29 +37,11 @@ LOGIN
 
 </button>
 
+<p id="error"></p>
+
 </div>
 
-<script>
-
-function login(){
-
-let u=document.getElementById("username").value;
-
-let p=document.getElementById("password").value;
-
-if(u==="admin" && p==="123456"){
-
-window.location.href="dashboard.html";
-
-}else{
-
-alert("Username atau Password salah");
-
-}
-
-}
-
-</script>
+<script src="js/login.js"></script>
 
 </body>
 </html>
