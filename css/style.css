@@ -228,7 +228,43 @@ border-radius:10px;
 font-size:18px;
 
 }
+textarea{
 
+width:100%;
+
+padding:12px;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+margin-bottom:15px;
+
+resize:vertical;
+
+min-height:90px;
+
+}
+
+.preview{
+
+width:140px;
+
+height:180px;
+
+object-fit:cover;
+
+border-radius:8px;
+
+margin-top:10px;
+
+margin-bottom:20px;
+
+border:1px solid #ccc;
+
+display:block;
+
+}
 .menu-box:hover{
 
 background:#198754;
