@@ -1,64 +1,85 @@
-if(localStorage.getItem("login")!="true"){
-location="index.html";
+if (localStorage.getItem("login") != "true") {
+    location = "index.html";
 }
 
-let anggota=
-JSON.parse(localStorage.getItem("anggota"))||[];
+let anggota = JSON.parse(localStorage.getItem("anggota")) || [];
+let editIndex = localStorage.getItem("editIndex");
 
-let nomor="GRS-"+String(anggota.length+1).padStart(4,"0");
+let fotoBase64 = "";
 
-document.getElementById("id").value=nomor;
+if (editIndex !== null) {
 
-let fotoBase64="";
+    let data = anggota[editIndex];
 
-document.getElementById("foto").addEventListener("change",function(){
+    document.getElementById("id").value = data.id;
+    document.getElementById("nama").value = data.nama;
+    document.getElementById("jabatan").value = data.jabatan;
+    document.getElementById("alamat").value = data.alamat;
+    document.getElementById("hp").value = data.hp;
 
-let file=this.files[0];
+    fotoBase64 = data.foto || "";
 
-if(!file)return;
+    if (fotoBase64 !== "") {
+        document.getElementById("preview").src = fotoBase64;
+    }
 
-let reader=new FileReader();
+} else {
 
-reader.onload=function(e){
-
-fotoBase64=e.target.result;
-
-document.getElementById("preview").src=fotoBase64;
+    let nomor = "GRS-" + String(anggota.length + 1).padStart(4, "0");
+    document.getElementById("id").value = nomor;
 
 }
 
-reader.readAsDataURL(file);
+document.getElementById("foto").addEventListener("change", function () {
+
+    const file = this.files[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+
+        fotoBase64 = e.target.result;
+        document.getElementById("preview").src = fotoBase64;
+
+    };
+
+    reader.readAsDataURL(file);
 
 });
 
-document.getElementById("formAnggota").addEventListener("submit",function(e){
+document.getElementById("formAnggota").addEventListener("submit", function (e) {
 
-e.preventDefault();
+    e.preventDefault();
 
-let data={
+    const data = {
 
-id:document.getElementById("id").value,
+        id: document.getElementById("id").value,
+        nama: document.getElementById("nama").value,
+        jabatan: document.getElementById("jabatan").value,
+        alamat: document.getElementById("alamat").value,
+        hp: document.getElementById("hp").value,
+        foto: fotoBase64,
+        tanggal: new Date().toLocaleDateString("id-ID")
 
-nama:document.getElementById("nama").value,
+    };
 
-jabatan:document.getElementById("jabatan").value,
+    if (editIndex !== null) {
 
-alamat:document.getElementById("alamat").value,
+        anggota[editIndex] = data;
+        localStorage.removeItem("editIndex");
+        alert("Data berhasil diperbarui.");
 
-hp:document.getElementById("hp").value,
+    } else {
 
-foto:fotoBase64,
+        anggota.push(data);
+        alert("Data berhasil disimpan.");
 
-tanggal:new Date().toLocaleDateString("id-ID")
+    }
 
-};
+    localStorage.setItem("anggota", JSON.stringify(anggota));
 
-anggota.push(data);
-
-localStorage.setItem("anggota",JSON.stringify(anggota));
-
-alert("Data anggota berhasil disimpan.");
-
-location.reload();
+    location = "data-anggota.html";
 
 });
