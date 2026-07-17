@@ -1,6 +1,3 @@
-const ADMIN_USERNAME = "admin";
-
-const ADMIN_PASSWORD = "123456";
 
 function login(){
 
