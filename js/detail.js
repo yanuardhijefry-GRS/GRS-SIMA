@@ -28,4 +28,4 @@ document.getElementById("alamat").innerHTML=a.alamat;
 
 document.getElementById("hp").innerHTML=a.hp;
 
-document.getElementById("tanggal").innerHTML=a.tanggal;
+document.getElementById("goldar").innerHTML=a.goldar;
