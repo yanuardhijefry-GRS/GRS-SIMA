@@ -203,11 +203,13 @@ flex-wrap:wrap;
 
 background:white;
 
-padding:20px;
+padding:25px;
 
 border-radius:10px;
 
-box-shadow:0 5px 10px rgba(0,0,0,.1);
+box-shadow:0 8px 15px rgba(0,0,0,.08);
+
+border-top:6px solid #F57C00;
 
 width:220px;
 
