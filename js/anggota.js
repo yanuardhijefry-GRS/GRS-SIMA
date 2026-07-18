@@ -56,6 +56,7 @@ document.getElementById("formAnggota").addEventListener("submit", function (e) {
     const data = {
 
         id: document.getElementById("id").value,
+        register: document.getElementById("register").value,
         nama: document.getElementById("nama").value,
         jabatan: document.getElementById("jabatan").value,
         alamat: document.getElementById("alamat").value,
@@ -83,3 +84,23 @@ document.getElementById("formAnggota").addEventListener("submit", function (e) {
     location = "data-anggota.html";
 
 });
+
+const data = {
+
+    id: document.getElementById("id").value,
+
+    register: document.getElementById("register").value,
+
+    nama: document.getElementById("nama").value,
+
+    jabatan: document.getElementById("jabatan").value,
+
+    alamat: document.getElementById("alamat").value,
+
+    hp: document.getElementById("hp").value,
+
+    foto: fotoBase64,
+
+    tanggal: new Date().toLocaleDateString("id-ID")
+
+};
