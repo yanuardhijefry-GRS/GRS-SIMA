@@ -29,7 +29,7 @@ tabel.innerHTML+=`
 
 <td>${a.nama}</td>
 
-<td>${a.golongan darah}</td>
+<td>${a.goldar}</td>
 
 <td>${a.jabatan}</td>
 
