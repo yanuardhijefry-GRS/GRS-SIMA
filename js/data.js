@@ -25,8 +25,6 @@ tabel.innerHTML+=`
 
 </td>
 
-<td>${a.id}</td>
-
 <td>${a.register}</td>
 
 <td>${a.nama}</td>
