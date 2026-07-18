@@ -27,6 +27,8 @@ tabel.innerHTML+=`
 
 <td>${a.id}</td>
 
+<td>${a.register}</td>
+
 <td>${a.nama}</td>
 
 <td>${a.jabatan}</td>
