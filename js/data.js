@@ -90,7 +90,7 @@ a.nama.toLowerCase().includes(key)
 
 ||
 
-a.id.toLowerCase().includes(key)
+(a.register || "").toLowerCase().includes(key)
 
 );
 
