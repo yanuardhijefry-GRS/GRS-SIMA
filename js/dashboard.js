@@ -6,3 +6,7 @@ if (menuBtn && sidebar) {
         sidebar.classList.toggle("active");
     });
 }
+
+<script src="js/dashboard.js"></script>
+<script src="js/export.js"></script>
+</body>
