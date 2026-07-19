@@ -1,14 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const menuBtn = document.getElementById("menuBtn");
-    const sidebar = document.getElementById("sidebar");
+const menuBtn=document.getElementById("menuBtn");
+const sidebar=document.getElementById("sidebar");
+const overlay=document.getElementById("overlay");
 
-    if (menuBtn && sidebar) {
+menuBtn.addEventListener("click",()=>{
 
-        menuBtn.addEventListener("click", function () {
-            sidebar.classList.toggle("active");
-        });
+sidebar.classList.toggle("active");
+overlay.classList.toggle("active");
 
-    }
+});
+
+overlay.addEventListener("click",()=>{
+
+sidebar.classList.remove("active");
+overlay.classList.remove("active");
+
+});
+
+document.querySelectorAll(".sidebar a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+if(window.innerWidth<=768){
+
+sidebar.classList.remove("active");
+overlay.classList.remove("active");
+
+}
+
+});
+
+});
 
 });
