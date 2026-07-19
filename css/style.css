@@ -387,6 +387,20 @@ background:#198754;
 background:#6f42c1;
 
 }
+
+
+#foto{
+
+width:120px;
+
+height:150px;
+
+object-fit:cover;
+
+border-radius:8px;
+
+}
+
 #kartu{
 
 width:340px;
@@ -405,46 +419,7 @@ box-shadow:0 5px 20px rgba(0,0,0,.2);
 
 }
 
-#foto{
 
-width:120px;
-
-height:150px;
-
-object-fit:cover;
-
-border-radius:8px;
-
-}
-#kartu{
-
-width:340px;
-
-padding:20px;
-
-background:white;
-
-margin:auto;
-
-border-radius:12px;
-
-text-align:center;
-
-box-shadow:0 5px 20px rgba(0,0,0,.2);
-
-}
-
-#foto{
-
-width:120px;
-
-height:150px;
-
-object-fit:cover;
-
-border-radius:8px;
-
-}
 #reader{
 
 max-width:400px;
@@ -452,6 +427,7 @@ max-width:400px;
 margin:auto;
 
 }
+
 .detail-card{
 
 width:420px;
@@ -504,6 +480,8 @@ margin-bottom:15px;
 border:1px solid #ddd;
 
 border-radius:8px;
+
+}
 .menu-btn{
 
 display:none;
