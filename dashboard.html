@@ -73,15 +73,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <!-- Content -->
 
-<div class="content fade">
+<div class="topbar">
+
+<div>
 
 <h1>Dashboard</h1>
 
-<p>Selamat datang di Sistem Informasi Manajemen Anggota Gading Rescue Squad.</p>
+<p>Selamat datang di Sistem Informasi Manajemen Anggota Gading Rescue Squad.
+</p>
+</div>
+<div class="admin-box">
+<i class="fa-solid fa-user-shield></i>
+<span>Administrator</span>
+
+</div>
+</div>
+
 
 <div class="cards">
 
 <div class="card">
+
+<i class="fa-solid fa-users"></i>
 
 <h3>Total Anggota</h3>
 
@@ -91,6 +104,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <div class="card">
 
+<i class="fa-solid fa-user-check"></i>
+
 <h3>Status Login</h3>
 
 <h2>Admin</h2>
@@ -98,47 +113,46 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </div>
 
 </div>
-
+  
 <h2>Menu Cepat</h2>
-
-<div class="menu-grid">
+  
+</a><div class="menu-grid">
 
 <a href="anggota.html" class="menu-box">
 
-👤<br><br>
+<i class="fa-solid fa-user-plus"></i>
 
-Tambah Anggota
+<h3>Tambah Anggota</h3>
 
 </a>
 
 <a href="data-anggota.html" class="menu-box">
 
-📋<br><br>
+<i class="fa-solid fa-users"></i>
 
-Data Anggota
+<h3>Data Anggota</h3>
 
 </a>
 
 <a href="scan.html" class="menu-box">
 
-📷<br><br>
+<i class="fa-solid fa-qrcode"></i>
 
-Scan QR
+<h3>Scan QR</h3>
 
 </a>
 
 <a href="kta.html" class="menu-box">
 
-🪪<br><br>
+<i class="fa-solid fa-id-card"></i>
 
-Cetak KTA
+<h3>Cetak KTA</h3>
 
 </a>
 
 </div>
-
 </div>
-
+  
 <script>
 
 if(localStorage.getItem("login")!="true"){
