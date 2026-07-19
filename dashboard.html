@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dashboard - GRS-SIMA</title>
 
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-<div class="sidebar">
+<!-- Tombol Menu HP -->
+
+<button id="menuBtn" class="menu-btn">☰</button>
+
+<!-- Overlay -->
+
+<div id="overlay" class="overlay"></div>
+
+<!-- Sidebar -->
+
+<div class="sidebar" id="sidebar">
 
 <div class="brand">
-<img src="img/logo.PNG">  
+
+<img src="img/logo.PNG" alt="Logo">
+
 <h2>GRS-SIMA</h2>
-<p>Gading Rescue Squad</p>
+
+<small>Gading Rescue Squad</small>
+
 </div>
 
-<a href="dashboard.html">🏠 Dashboard</a>
+<a href="dashboard.html" class="active">🏠 Dashboard</a>
 
 <a href="anggota.html">👤 Tambah Anggota</a>
 
@@ -33,9 +50,13 @@
 
 </div>
 
-<div class="content">
+<!-- Content -->
+
+<div class="content fade">
 
 <h1>Dashboard</h1>
+
+<p>Selamat datang di Sistem Informasi Manajemen Anggota Gading Rescue Squad.</p>
 
 <div class="cards">
 
@@ -44,41 +65,6 @@
 <h3>Total Anggota</h3>
 
 <h2 id="totalAnggota">0</h2>
-
-  <div class="card">
-
-<h3>Backup Data</h3>
-
-<button onclick="exportData()">
-
-Export JSON
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>Restore Data</h3>
-
-<input
-type="file"
-id="importFile"
-accept=".json">
-
-</div>
-
-<div class="card">
-
-<h3>Reset Data</h3>
-
-<button onclick="resetData()">
-
-Hapus Semua
-
-</button>
-
-</div>
 
 </div>
 
@@ -97,19 +83,35 @@ Hapus Semua
 <div class="menu-grid">
 
 <a href="anggota.html" class="menu-box">
+
+👤<br><br>
+
 Tambah Anggota
+
 </a>
 
 <a href="data-anggota.html" class="menu-box">
+
+📋<br><br>
+
 Data Anggota
+
 </a>
 
 <a href="scan.html" class="menu-box">
+
+📷<br><br>
+
 Scan QR
+
 </a>
 
 <a href="kta.html" class="menu-box">
+
+🪪<br><br>
+
 Cetak KTA
+
 </a>
 
 </div>
@@ -120,25 +122,26 @@ Cetak KTA
 
 if(localStorage.getItem("login")!="true"){
 
-window.location="index.html";
+location="index.html";
 
 }
 
-let anggota =
-JSON.parse(localStorage.getItem("anggota")) || [];
+const anggota=JSON.parse(localStorage.getItem("anggota"))||[];
 
-document.getElementById("totalAnggota").innerHTML=
-anggota.length;
+document.getElementById("totalAnggota").innerHTML=anggota.length;
 
 function logout(){
 
 localStorage.removeItem("login");
 
-window.location="index.html";
+location="index.html";
 
 }
 
 </script>
-<script src="js/export.js"></script>
+
+<script src="js/dashboard.js"></script>
+
 </body>
+
 </html>
