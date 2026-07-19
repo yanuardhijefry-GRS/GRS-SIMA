@@ -1,109 +1,88 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dashboard - GRS-SIMA</title>
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet"
 </head>
 
 <body>
 
-<!-- Tombol Menu HP -->
-
-<button id="menuBtn" class="menu-btn">☰</button>
-
-<!-- Overlay -->
-
-<div id="overlay" class="overlay"></div>
-
-<!-- Sidebar -->
-
-<div class="sidebar" id="sidebar">
+<div class="sidebar">
 
 <div class="brand">
-
-<img src="img/logo.PNG" alt="Logo">
-
+<img src="img/logo.PNG">  
 <h2>GRS-SIMA</h2>
- 
-<small>Gading Rescue Squad</small>
-
+<p>Gading Rescue Squad</p>
 </div>
 
-<a href="dashboard.html" class="active">
-<i class="fa-solid fa-house"></i>
-<span>Dashboard</span>
-</a>
+<a href="dashboard.html">🏠 Dashboard</a>
 
-<a href="anggota.html">
-<i class="fa-solid fa-user-plus"></i>
-<span>Tambah Anggota</span>
-</a>
+<a href="anggota.html">👤 Tambah Anggota</a>
 
-<a href="data-anggota.html">
-<i class="fa-solid fa-users"></i>
-<span>Data Anggota</span>
-</a>
+<a href="data-anggota.html">📋 Data Anggota</a>
 
-<a href="scan.html">
-<i class="fa-solid fa-qrcode"></i>
-<span>Scan QR</span>
-</a>
+<a href="scan.html">📷 Scan QR</a>
 
-<a href="kta.html">
-<i class="fa-solid fa-id-card"></i>
-<span>Cetak KTA</span>
-</a>
-
-<a href="#" onclick="logout()">
-<i class="fa-solid fa-right-from-bracket"></i>
-<span>Logout</span>
-</a>
+<a href="kta.html">🪪 Cetak KTA</a>
 
 <a href="#" onclick="logout()">🚪 Logout</a>
 
 </div>
 
-<!-- Content -->
-
-<div class="topbar">
-
-<div>
+<div class="content">
 
 <h1>Dashboard</h1>
-
-<p>Selamat datang di Sistem Informasi Manajemen Anggota Gading Rescue Squad.
-</p>
-</div>
-<div class="admin-box">
-<i class="fa-solid fa-user-shield></i>
-<span>Administrator</span>
-
-</div>
-</div>
-
 
 <div class="cards">
 
 <div class="card">
 
-<i class="fa-solid fa-users"></i>
-
 <h3>Total Anggota</h3>
 
 <h2 id="totalAnggota">0</h2>
+
+  <div class="card">
+
+<h3>Backup Data</h3>
+
+<button onclick="exportData()">
+
+Export JSON
+
+</button>
 
 </div>
 
 <div class="card">
 
-<i class="fa-solid fa-user-check"></i>
+<h3>Restore Data</h3>
+
+<input
+type="file"
+id="importFile"
+accept=".json">
+
+</div>
+
+<div class="card">
+
+<h3>Reset Data</h3>
+
+<button onclick="resetData()">
+
+Hapus Semua
+
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
 
 <h3>Status Login</h3>
 
@@ -112,70 +91,54 @@
 </div>
 
 </div>
-  
+
 <h2>Menu Cepat</h2>
-  
-</a><div class="menu-grid">
+
+<div class="menu-grid">
 
 <a href="anggota.html" class="menu-box">
-
-<i class="fa-solid fa-user-plus"></i>
-
-<h3>Tambah Anggota</h3>
-
+Tambah Anggota
 </a>
 
 <a href="data-anggota.html" class="menu-box">
-
-<i class="fa-solid fa-users"></i>
-
-<h3>Data Anggota</h3>
-
+Data Anggota
 </a>
 
 <a href="scan.html" class="menu-box">
-
-<i class="fa-solid fa-qrcode"></i>
-
-<h3>Scan QR</h3>
-
+Scan QR
 </a>
 
 <a href="kta.html" class="menu-box">
-
-<i class="fa-solid fa-id-card"></i>
-
-<h3>Cetak KTA</h3>
-
+Cetak KTA
 </a>
 
 </div>
+
 </div>
-  
+
 <script>
 
 if(localStorage.getItem("login")!="true"){
 
-location="index.html";
+window.location="index.html";
 
 }
 
-const anggota=JSON.parse(localStorage.getItem("anggota"))||[];
+let anggota =
+JSON.parse(localStorage.getItem("anggota")) || [];
 
-document.getElementById("totalAnggota").innerHTML=anggota.length;
+document.getElementById("totalAnggota").innerHTML=
+anggota.length;
 
 function logout(){
 
 localStorage.removeItem("login");
 
-location="index.html";
+window.location="index.html";
 
 }
 
 </script>
-
-<script src="js/dashboard.js"></script>
-
+<script src="js/export.js"></script>
 </body>
-
 </html>
