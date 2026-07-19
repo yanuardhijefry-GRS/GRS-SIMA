@@ -1,12 +1,14 @@
-const menuBtn = document.getElementById("menuBtn");
-const sidebar = document.getElementById("sidebar");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (menuBtn && sidebar) {
-    menuBtn.addEventListener("click", function () {
-        sidebar.classList.toggle("active");
-    });
-}
+    const menuBtn = document.getElementById("menuBtn");
+    const sidebar = document.getElementById("sidebar");
 
-<script src="js/dashboard.js"></script>
-<script src="js/export.js"></script>
-</body>
+    if (menuBtn && sidebar) {
+
+        menuBtn.addEventListener("click", function () {
+            sidebar.classList.toggle("active");
+        });
+
+    }
+
+});
