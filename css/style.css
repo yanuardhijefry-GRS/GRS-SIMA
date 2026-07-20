@@ -493,7 +493,8 @@ font-size:15px;
 ========================== */
 
 .menu-btn{
-    display:none;
+    display:block;
+    background:red;
 }
 
 @media (max-width:768px){
