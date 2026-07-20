@@ -488,3 +488,45 @@ border-radius:8px;
 font-size:15px;
 
 }
+/* ==========================
+   RESPONSIVE HP
+========================== */
+
+.menu-btn{
+    display:none;
+}
+
+@media (max-width:768px){
+
+    .menu-btn{
+        display:block;
+        position:fixed;
+        top:15px;
+        left:15px;
+        width:45px;
+        height:45px;
+        border:none;
+        border-radius:8px;
+        background:#F57C00;
+        color:#fff;
+        font-size:24px;
+        cursor:pointer;
+        z-index:1001;
+    }
+
+    .sidebar{
+        left:-240px;
+        transition:.3s;
+        z-index:1000;
+    }
+
+    .sidebar.active{
+        left:0;
+    }
+
+    .content{
+        margin-left:0;
+        padding:70px 15px 20px;
+    }
+
+}
