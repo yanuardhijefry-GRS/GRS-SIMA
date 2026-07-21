@@ -545,3 +545,8 @@ font-size:15px;
     background:rgba(0,0,0,.4);
     z-index:999;
 }
+@media (min-width:769px){
+    .menu-btn{
+        display:none !important;
+    }
+}
