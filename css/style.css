@@ -550,3 +550,15 @@ font-size:15px;
         display:none !important;
     }
 }
+
+/* ===== Sidebar Divider ===== */
+
+.sidebar hr{
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    margin:15px 0;
+
+}
