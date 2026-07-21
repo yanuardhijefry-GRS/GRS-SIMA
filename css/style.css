@@ -116,23 +116,19 @@ margin-top:10px;
 
 }
 .sidebar{
-
-position:fixed;
-
-left:0;
-
-top:0;
-
-width:240px;
-
-height:100%;
-
-background:#222;
-
-padding:20px;
-
-box-shadow:3px 0 10px rgba(0,0,0,.2);  
-
+    position: fixed;
+    top:0;
+    left:0;
+    width:250px;
+    height:100vh;
+    background:#F57C00;
+    color:#fff;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:40px;
+    box-sizing:border-box;
+    z-index:1000;
 }
 
 .brand{
@@ -145,36 +141,61 @@ margin-bottom:30px;
 
 }
 
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:250px;
+    height:100vh;
+    background:#F57C00;
+    color:#fff;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:40px;
+    box-sizing:border-box;
+    z-index:1000;
+}
+
+.brand{
+    text-align:center;
+    color:#fff;
+    margin-bottom:25px;
+}
+
 .brand img{
+    width:80px;
+    margin-bottom:10px;
+}
 
-width:80px;
-
-margin-bottom:10px;
-
+.sidebar h4{
+    margin:18px 15px 8px;
+    font-size:11px;
+    font-weight:600;
+    color:rgba(255,255,255,.75);
+    text-transform:uppercase;
+    letter-spacing:1px;
 }
 
 .sidebar a{
-
-display:block;
-
-color:white;
-
-padding:13px;
-
-text-decoration:none;
-
-border-radius:10px;
-
-margin-bottom:10px;
-  
-transition:.3s;
-
+    display:block;
+    color:#fff;
+    padding:13px 15px;
+    text-decoration:none;
+    border-radius:10px;
+    margin:4px 10px;
+    transition:.3s;
 }
 
-.sidebar a:hover{
+.sidebar a:hover,
+.sidebar a.active{
+    background:rgba(255,255,255,.18);
+}
 
-background:#F57C00;
-
+.sidebar hr{
+    border:none;
+    border-top:1px solid rgba(255,255,255,.2);
+    margin:12px 10px;
 }
 
 .content{
