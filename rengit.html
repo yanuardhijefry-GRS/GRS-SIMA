@@ -53,11 +53,67 @@ Belum ada data Rencana Giat
 </td>
 
 </tr>
-
+  
 </tbody>
 
 </table>
 
 </div>
 
+</div> <!-- content -->
+
+<!-- Modal Rencana Giat -->
+<div id="modalGiat" class="modal">
+
+<div class="modal-content">
+
+<h2>📅 Tambah Rencana Giat</h2>
+
+<form id="formGiat">
+
+<label>Nama Kegiatan</label>
+<input type="text" id="namaGiat" required>
+
+<label>Jenis Kegiatan</label>
+<select id="jenisGiat">
+<option>Kebencanaan</option>
+<option>SAR</option>
+<option>Kesehatan</option>
+<option>Pelatihan</option>
+<option>Sosial</option>
+<option>Siaga Khusus</option>
+<option>Rapat</option>
+<option>Lainnya</option>
+</select>
+
+<label>Tanggal Mulai</label>
+<input type="date" id="tglMulai">
+
+<label>Lokasi</label>
+<input type="text" id="lokasi">
+
+<div class="modal-action">
+
+<button type="button" id="btnBatal">
+Batal
+</button>
+
+<button type="submit">
+Simpan
+</button>
+
 </div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/rengit.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
