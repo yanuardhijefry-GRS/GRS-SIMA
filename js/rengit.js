@@ -1,36 +1,47 @@
 // ===============================
 // GRS-SIMA
-// Modul : Rencana Giat
+// Modul Rencana Giat
+// Tahap 3B
 // ===============================
 
-const modal = document.getElementById("modalGiat");
-const btnTambah = document.getElementById("btnTambah");
-const btnBatal = document.getElementById("btnBatal");
-const formGiat = document.getElementById("formGiat");
+document.addEventListener("DOMContentLoaded", () => {
 
-// Buka Form
-btnTambah.addEventListener("click", () => {
-    modal.style.display = "flex";
-});
+    const modal = document.getElementById("modalGiat");
+    const btnTambah = document.getElementById("btnTambah");
+    const btnBatal = document.getElementById("btnBatal");
+    const form = document.getElementById("formGiat");
 
-// Tutup Form
-btnBatal.addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-// Klik di luar modal
-window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
+    // Jika ada elemen yang belum ditemukan, hentikan agar tidak error
+    if (!modal || !btnTambah || !btnBatal || !form) {
+        console.error("Elemen Rencana Giat belum lengkap.");
+        return;
     }
-});
 
-// Submit Form
-formGiat.addEventListener("submit", (e) => {
-    e.preventDefault();
+    // Buka modal
+    btnTambah.addEventListener("click", () => {
+        modal.style.display = "flex";
+    });
 
-    alert("Tahap berikutnya data akan disimpan ke LocalStorage.");
+    // Tutup modal
+    btnBatal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
 
-    formGiat.reset();
-    modal.style.display = "none";
+    // Klik di luar modal
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Simpan (sementara)
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        alert("Data berhasil diterima.\nTahap berikutnya akan disimpan ke LocalStorage.");
+
+        form.reset();
+        modal.style.display = "none";
+    });
+
 });
