@@ -1,3 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rencana Giat | GRS-SIMA</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  
+<button id="menuBtn" class="menu-btn">☰</button>
+
+<div id="overlay" class="overlay"></div>
+
+<div class="sidebar" id="sidebar">
+
+<div class="brand">
+<img src="img/logo.PNG">
+<h2>GRS-SIMA</h2>
+<small>Gading Rescue Squad</small>
+</div>
+
+<a href="dashboard.html">🏠 Dashboard</a>
+
+<h4>Anggota</h4>
+<a href="anggota.html">👤 Tambah Anggota</a>
+<a href="data-anggota.html">📋 Data Anggota</a>
+
+<h4>Operasional</h4>
+<a href="rengit.html" class="active">📅 Rencana Giat</a>
+<a href="bencana.html">🌍 Info Bencana</a>
+<a href="kesehatan.html">🏥 Giat Kesehatan</a>
+<a href="nomor.html">☎ Nomor Penting</a>
+
+<h4>Akun</h4>
+<a href="#" onclick="logout()">🚪 Logout</a>
+
+</div>
+
 <div class="content fade">
 
 <h1>📅 Rencana Giat</h1>
@@ -62,58 +107,71 @@ Belum ada data Rencana Giat
 
 </div> <!-- content -->
 
-<!-- Modal Rencana Giat -->
+<!-- ===========================
+     MODAL TAMBAH RENCANA GIAT
+=========================== -->
+
 <div id="modalGiat" class="modal">
 
-<div class="modal-content">
+    <div class="modal-content">
 
-<h2>📅 Tambah Rencana Giat</h2>
+        <h2>📅 Tambah Rencana Giat</h2>
 
-<form id="formGiat">
+        <form id="formGiat">
 
-<label>Nama Kegiatan</label>
-<input type="text" id="namaGiat" required>
+            <label>Nama Kegiatan</label>
+            <input type="text" id="namaGiat" required>
 
-<label>Jenis Kegiatan</label>
-<select id="jenisGiat">
-<option>Kebencanaan</option>
-<option>SAR</option>
-<option>Kesehatan</option>
-<option>Pelatihan</option>
-<option>Sosial</option>
-<option>Siaga Khusus</option>
-<option>Rapat</option>
-<option>Lainnya</option>
-</select>
+            <label>Jenis Kegiatan</label>
+            <select id="jenisGiat">
+                <option>Kebencanaan</option>
+                <option>SAR</option>
+                <option>Kesehatan</option>
+                <option>Pelatihan</option>
+                <option>Sosial</option>
+                <option>Siaga Khusus</option>
+                <option>Rapat</option>
+                <option>Lainnya</option>
+            </select>
 
-<label>Tanggal Mulai</label>
-<input type="date" id="tglMulai">
+            <label>Tanggal Mulai</label>
+            <input type="date" id="tglMulai">
 
-<label>Lokasi</label>
-<input type="text" id="lokasi">
+            <label>Lokasi</label>
+            <input type="text" id="lokasi">
 
-<div class="modal-action">
+            <div class="modal-action">
 
-<button type="button" id="btnBatal">
-Batal
-</button>
+                <button type="button" id="btnBatal">
+                    Batal
+                </button>
 
-<button type="submit">
-Simpan
-</button>
+                <button type="submit">
+                    Simpan
+                </button>
 
-</div>
+            </div>
 
-</form>
+        </form>
 
-</div>
-
-</div>
+    </div>
 
 </div>
+
+<script>
+
+function logout(){
+
+    localStorage.removeItem("login");
+    window.location.href="index.html";
+
+}
+
+</script>
 
 <script src="js/rengit.js"></script>
 <script src="js/dashboard.js"></script>
 
 </body>
-</html>
+</html>  
+
