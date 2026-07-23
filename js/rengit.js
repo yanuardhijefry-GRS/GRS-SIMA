@@ -14,7 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let dataGiat = JSON.parse(localStorage.getItem("rencanaGiat")) || [];
     let editIndex = -1;
-    
+
+    function formatTanggal(tanggal){
+
+    if(!tanggal) return "-";
+        
+    return new Date(tanggal).toLocaleDateString("id-ID",{
+        day:"numeric",
+        month:"long",
+        year:"numeric"
+    });    
+
+}
     tampilkanData();
 
     btnTambah.addEventListener("click", () => {
@@ -61,6 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function tampilkanData() {
 
+    dataGiat.sort((a, b) => {
+        return new Date(a.tanggal) - new Date(b.tanggal);
+    });
+
+
         tbody.innerHTML = "";
 
         if (dataGiat.length === 0) {
@@ -78,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             tbody.innerHTML += `
                 <tr>
-                    <td>${item.tanggal}</td>
+                    <td>${formatTanggal(item.tanggal}</td>
                     <td>${item.nama}</td>
                     <td>${item.jenis}</td>
                     <td>${item.lokasi}</td>
