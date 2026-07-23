@@ -104,6 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
             tampilkanData();
 
         }
+
+ }    
+    
     window.editGiat = function(index){
 
         editIndex = index;
@@ -118,6 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "flex";
 
 }
-    }
+    
 
 });
