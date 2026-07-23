@@ -672,3 +672,33 @@ font-size:15px;
     background:#F57C00;
     color:#fff;
 }
+
+
+/* Tombol Edit */
+.btn-edit{
+    background:#2196F3;
+    color:#fff;
+    border:none;
+    padding:6px 10px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-right:5px;
+}
+
+.btn-edit:hover{
+    background:#1976D2;
+}
+
+/* Tombol Hapus */
+.btn-hapus{
+    background:#F44336;
+    color:#fff;
+    border:none;
+    padding:6px 10px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.btn-hapus:hover{
+    background:#D32F2F;
+}
