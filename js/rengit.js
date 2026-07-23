@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const tbody = document.getElementById("dataGiat");
 
     let dataGiat = JSON.parse(localStorage.getItem("rencanaGiat")) || [];
-
+    let editIndex = -1;
+    
     tampilkanData();
 
     btnTambah.addEventListener("click", () => {
@@ -43,7 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "Direncanakan"
         };
 
-        dataGiat.push(giat);
+       if(editIndex === -1){
+    dataGiat.push(giat);
+}else{
+    dataGiat[editIndex] = giat;
+    editIndex = -1;
+}
 
         localStorage.setItem("rencanaGiat", JSON.stringify(dataGiat));
 
@@ -77,8 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${item.jenis}</td>
                     <td>${item.lokasi}</td>
                     <td>${item.status}</td>
-                    <td>
-                        <button onclick="hapusGiat(${index})">🗑 Hapus</button>
+                   <td>
+                    <button onclick="editGiat(${index})">✏ Edit</button>
+                    <button onclick="hapusGiat(${index})">🗑 Hapus</button>
                     </td>
                 </tr>
             `;
@@ -97,7 +104,20 @@ document.addEventListener("DOMContentLoaded", () => {
             tampilkanData();
 
         }
+    window.editGiat = function(index){
 
+        editIndex = index;
+
+    const item = dataGiat[index];
+
+    document.getElementById("namaGiat").value = item.nama;
+    document.getElementById("jenisGiat").value = item.jenis;
+    document.getElementById("tglMulai").value = item.tanggal;
+    document.getElementById("lokasi").value = item.lokasi;
+
+    modal.style.display = "flex";
+
+}
     }
 
 });
