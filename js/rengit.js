@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             tbody.innerHTML += `
                 <tr>
-                    <td>${formatTanggal(item.tanggal}</td>
+                    <td>${formatTanggal(item.tanggal)}</td>
                     <td>${item.nama}</td>
                     <td>${item.jenis}</td>
                     <td>${item.lokasi}</td>
