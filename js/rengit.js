@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${item.lokasi}</td>
                     <td>${item.status}</td>
                    <td>
-                    <button onclick="editGiat(${index})">✏ Edit</button>
-                    <button onclick="hapusGiat(${index})">🗑 Hapus</button>
+                    <button class="btn-edit" onclick="editGiat(${index})">✏ Edit</button>
+                    <button class="btn-hapus" onclick="hapusGiat(${index})">🗑 Hapus</button>
                     </td>
                 </tr>
             `;
